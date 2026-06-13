@@ -1,0 +1,41 @@
+---
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | WordCraft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --indigo: #1E2A4A;
+      --amber: #F5A623;
+      --bg: #FAF8F4;
+      --slate: #5C6478;
+      --border: #E5E1D8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--indigo); line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Fraunces', serif; }
+    header { background: var(--indigo); color: var(--bg); padding: 1.25rem 1.5rem; }
+    header a { color: var(--bg); text-decoration: none; font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; }
+    header a span { color: var(--amber); }
+    main { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem; }
+    main h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    main h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    main p, main li { color: var(--slate); margin-bottom: 0.75rem; }
+    main ol, main ul { padding-left: 1.5rem; }
+    footer { background: var(--indigo); color: rgba(250,248,244,0.6); padding: 2rem 1.5rem; text-align: center; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <header><a href="/">Word<span>Craft</span></a></header>
+  <main>
+    <h1>{title}</h1>
+    <slot />
+  </main>
+  <footer>WordCraft — English for Class 11, 12 & CUET</footer>
+</body>
+</html>
