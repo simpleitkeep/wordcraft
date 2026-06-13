@@ -1,17 +1,82 @@
 ---
-
 ---
-
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WordCraft | CBSE Class 11 & 12 English + CUET English Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #1E2A4A;
+    --indigo-light: #2D3D63;
+    --amber: #F5A623;
+    --bg: #FAF8F4;
+    --slate: #5C6478;
+    --coral: #E8634C;
+    --plum: #6B4E9E;
+    --border: #E5E1D8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--indigo); line-height: 1.6; }
+  h1, h2, h3 { font-family: 'Fraunces', serif; }
+  .label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  header { background: var(--indigo); color: var(--bg); padding: 1.25rem 1.5rem; }
+  .nav-wrap { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--bg); text-decoration: none; }
+  .logo span { color: var(--amber); }
+  .hero { max-width: 1140px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; max-width: 16ch; line-height: 1.15; }
+  .hero p { color: var(--slate); max-width: 56ch; margin-top: 1rem; font-size: 1.05rem; }
+  .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+  .lens-col h2 { font-size: 1.05rem; margin-bottom: 1rem; }
+  .tile-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+  .subject-tile { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.4rem; text-decoration: none; color: var(--indigo); display: flex; justify-content: space-between; align-items: center; }
+  .subject-tile h3 { font-size: 1.05rem; }
+  .subject-tile p { font-size: 0.85rem; color: var(--slate); }
+  .lens-col.exam .subject-tile { border-left: 4px solid var(--coral); }
+  @media (max-width: 760px) { .lens-grid { grid-template-columns: 1fr; } }
+  footer { background: var(--indigo); color: rgba(250,248,244,0.6); padding: 2rem 1.5rem; text-align: center; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-wrap">
+    <a href="/" class="logo">Word<span>Craft</span></a>
+  </div>
+</header>
+<main class="hero">
+  <h1>English, taught around how you're actually being tested.</h1>
+  <p>Whether you need chapter-wise notes for your board exam or focused practice for CUET English after Class 12 — start from your class, or start from your exam.</p>
+
+  <div class="lens-grid">
+    <div class="lens-col">
+      <h2 class="label">By Class — Curriculum</h2>
+      <div class="tile-stack">
+        <a href="/english-notes/portrait-of-a-lady" class="subject-tile">
+          <div>
+            <h3>The Portrait of a Lady</h3>
+            <p>Class 11 — Prose chapter notes</p>
+          </div>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+    <div class="lens-col exam">
+      <h2 class="label">By Exam — Goal-based</h2>
+      <div class="tile-stack">
+        <a href="#" class="subject-tile">
+          <div>
+            <h3>CUET English</h3>
+            <p>Coming soon</p>
+          </div>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>WordCraft — English for Class 11, 12 & CUET</footer>
+</body>
 </html>
