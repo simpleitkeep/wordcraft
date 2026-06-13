@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WordCraft | CBSE Class 11 & 12 English + CUET English Prep</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
   :root {
     --indigo: #1E2A4A; --indigo-light: #2D3D63; --amber: #F5A623;
@@ -164,6 +165,18 @@
   <p>WordCraft — English for Class 11, 12 & CUET</p>
   <p style="margin-top: 0.5rem;"><a href="/admin">Editor login</a></p>
 </footer>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
