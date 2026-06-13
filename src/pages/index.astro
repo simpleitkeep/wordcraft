@@ -9,74 +9,161 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --indigo: #1E2A4A;
-    --indigo-light: #2D3D63;
-    --amber: #F5A623;
-    --bg: #FAF8F4;
-    --slate: #5C6478;
-    --coral: #E8634C;
-    --plum: #6B4E9E;
-    --border: #E5E1D8;
+    --indigo: #1E2A4A; --indigo-light: #2D3D63; --amber: #F5A623;
+    --bg: #FAF8F4; --slate: #5C6478; --coral: #E8634C; --plum: #6B4E9E; --border: #E5E1D8;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--indigo); line-height: 1.6; }
   h1, h2, h3 { font-family: 'Fraunces', serif; }
   .label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
-  header { background: var(--indigo); color: var(--bg); padding: 1.25rem 1.5rem; }
-  .nav-wrap { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  header { background: var(--indigo); color: var(--bg); padding: 1.25rem 1.5rem; position: sticky; top: 0; z-index: 100; }
+  .nav-wrap { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--bg); text-decoration: none; }
   .logo span { color: var(--amber); }
-  .hero { max-width: 1140px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+  nav ul { list-style: none; display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  nav a { color: var(--bg); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.85; }
+  nav a:hover { opacity: 1; color: var(--amber); }
+  .hero { max-width: 1140px; margin: 0 auto; padding: 3.5rem 1.5rem 1.5rem; }
   .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; max-width: 16ch; line-height: 1.15; }
   .hero p { color: var(--slate); max-width: 56ch; margin-top: 1rem; font-size: 1.05rem; }
-  .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
-  .lens-col h2 { font-size: 1.05rem; margin-bottom: 1rem; }
+  .lens-wrap { margin-top: 2.75rem; }
+  .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .lens-col h2 { font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+  .lens-col h2 .label { background: var(--indigo); color: var(--bg); padding: 0.25rem 0.6rem; border-radius: 5px; }
+  .lens-col.exam h2 .label { background: var(--coral); }
   .tile-stack { display: flex; flex-direction: column; gap: 0.75rem; }
-  .subject-tile { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.4rem; text-decoration: none; color: var(--indigo); display: flex; justify-content: space-between; align-items: center; }
-  .subject-tile h3 { font-size: 1.05rem; }
-  .subject-tile p { font-size: 0.85rem; color: var(--slate); }
+  .subject-tile { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.4rem; text-decoration: none; color: var(--indigo); display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: transform 0.15s ease, border-color 0.15s ease; }
+  .subject-tile:hover { transform: translateX(4px); border-color: var(--amber); }
+  .subject-tile h3 { font-size: 1.05rem; font-weight: 600; }
+  .subject-tile p { font-size: 0.85rem; color: var(--slate); margin-top: 0.15rem; }
+  .subject-tile .arrow { color: var(--amber); font-family: 'JetBrains Mono', monospace; }
   .lens-col.exam .subject-tile { border-left: 4px solid var(--coral); }
-  @media (max-width: 760px) { .lens-grid { grid-template-columns: 1fr; } }
-  footer { background: var(--indigo); color: rgba(250,248,244,0.6); padding: 2rem 1.5rem; text-align: center; margin-top: 3rem; }
+  .subject-tile.disabled { opacity: 0.6; cursor: default; }
+  .subject-tile.disabled:hover { transform: none; border-color: var(--border); }
+  @media (max-width: 760px) { .lens-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .skill-library { max-width: 1140px; margin: 4rem auto 0; padding: 2.5rem 1.5rem; background: var(--indigo); color: var(--bg); border-radius: 14px; }
+  .skill-library .inner { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: space-between; }
+  .skill-library .intro { max-width: 36ch; }
+  .skill-library h2 { color: var(--bg); font-size: 1.5rem; }
+  .skill-library .label { color: var(--amber); margin-bottom: 0.5rem; display: block; }
+  .skill-library p { color: rgba(250,248,244,0.75); margin-top: 0.75rem; font-size: 0.95rem; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; align-content: flex-start; max-width: 28rem; }
+  .skill-pill { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; border: 1px solid rgba(250,248,244,0.25); color: var(--bg); padding: 0.5rem 1rem; border-radius: 100px; }
+  section.block { max-width: 1140px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+  .block-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+  .block-head h2 { font-size: 1.6rem; font-weight: 600; }
+  .block-head .label { color: var(--slate); }
+  .premium-section { background: linear-gradient(135deg, #2A1F45 0%, var(--plum) 100%); border-radius: 14px; }
+  .premium-section .block-head { border-bottom-color: rgba(250,248,244,0.15); }
+  .premium-section .block-head h2 { color: var(--bg); }
+  .premium-section .block-head .label { color: rgba(250,248,244,0.6); }
+  .premium-section p.note { color: rgba(250,248,244,0.7); max-width: 50ch; margin-bottom: 1.5rem; }
+  .btn { display: inline-block; background: var(--amber); color: var(--indigo); font-weight: 600; text-decoration: none; padding: 0.85rem 1.6rem; border-radius: 8px; font-size: 0.95rem; }
+  footer { background: var(--indigo); color: rgba(250, 248, 244, 0.6); padding: 2rem 1.5rem; text-align: center; margin-top: 3rem; }
+  footer a { color: rgba(250,248,244,0.85); text-decoration: none; margin: 0 0.5rem; }
+  footer a:hover { color: var(--amber); }
 </style>
 </head>
 <body>
+
 <header>
   <div class="nav-wrap">
     <a href="/" class="logo">Word<span>Craft</span></a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#curriculum">By Class</a></li>
+        <li><a href="#exam">By Exam</a></li>
+        <li><a href="#skills">Skill Library</a></li>
+        <li><a href="#premium">Supplementary</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
-<main class="hero">
-  <h1>English, taught around how you're actually being tested.</h1>
-  <p>Whether you need chapter-wise notes for your board exam or focused practice for CUET English after Class 12 — start from your class, or start from your exam.</p>
 
-  <div class="lens-grid">
-    <div class="lens-col">
-      <h2 class="label">By Class — Curriculum</h2>
-      <div class="tile-stack">
-        <a href="/english-notes/portrait-of-a-lady" class="subject-tile">
-          <div>
-            <h3>The Portrait of a Lady</h3>
-            <p>Class 11 — Prose chapter notes</p>
+<main>
+  <section class="hero">
+    <h1>English, taught around how you're actually being tested.</h1>
+    <p>Whether you need chapter-wise notes for your board exam or focused practice for CUET English after Class 12 — start from your class, or start from your exam. Same content library, two ways in.</p>
+
+    <div class="lens-wrap">
+      <div class="lens-grid">
+        <div class="lens-col curriculum" id="curriculum">
+          <h2><span class="label">By Class</span> Curriculum-based</h2>
+          <div class="tile-stack">
+            <a href="/english-notes/portrait-of-a-lady" class="subject-tile">
+              <div>
+                <h3>The Portrait of a Lady</h3>
+                <p>Class 11 — Prose chapter notes</p>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+            <div class="subject-tile disabled">
+              <div>
+                <h3>More Class 11 & 12 chapters</h3>
+                <p>Coming soon</p>
+              </div>
+            </div>
           </div>
-          <span>→</span>
-        </a>
+        </div>
+
+        <div class="lens-col exam" id="exam">
+          <h2><span class="label">By Exam</span> Goal-based</h2>
+          <div class="tile-stack">
+            <div class="subject-tile disabled">
+              <div>
+                <h3>Board Exam Prep</h3>
+                <p>Sample papers & PYQs — coming soon</p>
+              </div>
+            </div>
+            <div class="subject-tile disabled">
+              <div>
+                <h3>CUET English</h3>
+                <p>Reading comprehension, AI essay feedback — coming soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="lens-col exam">
-      <h2 class="label">By Exam — Goal-based</h2>
-      <div class="tile-stack">
-        <a href="#" class="subject-tile">
-          <div>
-            <h3>CUET English</h3>
-            <p>Coming soon</p>
-          </div>
-          <span>→</span>
-        </a>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="skill-library">
+      <div class="inner">
+        <div class="intro">
+          <span class="label">The shared core</span>
+          <h2>One Skill Library, two paths in.</h2>
+          <p>Reading comprehension, writing formats, grammar, and vocabulary will live here once — and get pulled into both your class curriculum and your exam prep, so practice in one place strengthens both.</p>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Reading Comprehension</span>
+          <span class="skill-pill">Writing Formats</span>
+          <span class="skill-pill">Grammar & Usage</span>
+          <span class="skill-pill">Vocabulary Building</span>
+          <span class="skill-pill">Précis Writing</span>
+          <span class="skill-pill">Note Making</span>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section class="block premium-section" id="premium">
+    <div class="block-head">
+      <div>
+        <span class="label">Premium</span>
+        <h2>Supplementary Resources</h2>
+      </div>
+      <span class="label">Phase 1 — Coming soon</span>
+    </div>
+    <p class="note">Story-based grammar modules, animated poem walkthroughs, and vocabulary-building games — built based on demand. Join the waitlist to help shape what comes first.</p>
+    <a href="#" class="btn">Join the waitlist</a>
+  </section>
 </main>
-<footer>WordCraft — English for Class 11, 12 & CUET</footer>
+
+<footer>
+  <p>WordCraft — English for Class 11, 12 & CUET</p>
+  <p style="margin-top: 0.5rem;"><a href="/admin">Editor login</a></p>
+</footer>
+
 </body>
 </html>
