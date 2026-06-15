@@ -6,11 +6,17 @@ tags:
   - Prose
   - CUET-relevant
 ---
-Class XI English — Syllabus 2026-27
+## Class XI English — Syllabus 2026-27
 
-Theory: 80 Marks
+## Theory: 80 Marks
 
-Reading 26  • Grammar & Writing 23  •  Literature 31
+## Reading 26  
+
+## Grammar & Writing 23  
+
+## Literature 31
+
+
 
 ### Section A — Reading Skills	(26 marks)
 
@@ -21,8 +27,6 @@ Reading 26  • Grammar & Writing 23  •  Literature 31
 **3**	Note Making — Title 1, Numbering & indenting 1, Key/glossary 1, Notes 2. (Passage ~200–250 words)	5
 
 Summarisation (up to 50 words) — Content 2, Expression 1.	                       3
-
-   
 
 ### Section B — Grammar &  Creative Writing Skills     (23 marks)
 
@@ -52,23 +56,9 @@ Summarisation (up to 50 words) — Content 2, Expression 1.	                    
 
 **16**	Long answer (Snapshots), 1 of 2, in 120–150 words. Global comprehension, analytical & evaluative response. 1 × 6.	                                                                           6
 
-
-
 #### Quick reminders for students
 
 * Every writing and literature question has a choice — practise the type you answer best.
 * Mind the word limits: Summary / Advertisement / Poster ≤ 50 words; Speech & Debate 120–150 words.
 * Short literature answers 40–50 words; long literature answers 120–150 words.
-*  Books: Hornbill is the main reader (Q10, 11, 13, 15); Snapshots is the supplementary reader (Q12, 14, 16).
-
-
-
-
-
-#### \    
-
-
-
-
-
-\
+* Books: Hornbill is the main reader (Q10, 11, 13, 15); Snapshots is the supplementary reader (Q12, 14, 16).
