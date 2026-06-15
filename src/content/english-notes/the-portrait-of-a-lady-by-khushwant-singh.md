@@ -5,9 +5,12 @@ classLevel: 11
 tags:
   - Hornbill
 ---
+![](/images/screenshot-2026-06-14-at-5.20.54-pm.png)
+
+
+
 **1. About the Author and the Text**
 **Khushwant Singh (1915–2014)** was one of India's best-known writers and journalists. This chapter is an **autobiographical sketch** — the author is describing his own grandmother from memory. The title compares his written description to a painted "portrait": instead of using a brush, he paints her picture with words.
-
 
 **Genre:** Autobiographical prose / character sketch
 
