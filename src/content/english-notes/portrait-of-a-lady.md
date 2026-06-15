@@ -1,5 +1,5 @@
 ---
-title: The Portrait of a Lady
+title: CURRICULUM
 chapter: 1
 classLevel: 11
 tags:
