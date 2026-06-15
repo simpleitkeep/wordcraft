@@ -10,13 +10,11 @@ tags:
 
 ## Theory: 80 Marks
 
-## Reading 26  
+## Reading 26 
 
-## Grammar & Writing 23  
+## Grammar & Writing 23 
 
 ## Literature 31
-
-
 
 ### Section A — Reading Skills	(26 marks)
 
@@ -62,3 +60,7 @@ Summarisation (up to 50 words) — Content 2, Expression 1.	                    
 * Mind the word limits: Summary / Advertisement / Poster ≤ 50 words; Speech & Debate 120–150 words.
 * Short literature answers 40–50 words; long literature answers 120–150 words.
 * Books: Hornbill is the main reader (Q10, 11, 13, 15); Snapshots is the supplementary reader (Q12, 14, 16).
+
+***Click the Link Below to Access the Detailed Syllabus.***
+
+**<https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/English_core_SecP2_2026-27.pdf>**
